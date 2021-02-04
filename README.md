@@ -1,4 +1,4 @@
 # GamersGallery
-Our Senior Software Dev Capstone project
+Our Senior Software Development Capstone project
 
-Worked on by: Sutton, Ryan
+Worked on by: Sutton, Ryan, Zach
