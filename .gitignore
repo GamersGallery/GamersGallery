@@ -349,3 +349,5 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 ProjectMain/ProjectMain/obj/Debug/ProjectMain.csprojAssemblyReference.cache
+ProjectMain/ProjectMain/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+ProjectMain/.vs/ProjectMain/v16/.suo
