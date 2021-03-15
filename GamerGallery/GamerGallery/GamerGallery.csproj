@@ -105,6 +105,8 @@
     <Content Include="Account.aspx" />
     <Content Include="Catalog.aspx" />
     <Content Include="Friends.aspx" />
+    <Content Include="Images\logo_images\Logo-clear.png" />
+    <Content Include="Images\logo_images\Logo-dark.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Gallery.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -232,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
