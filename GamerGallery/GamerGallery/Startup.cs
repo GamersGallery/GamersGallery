@@ -20,9 +20,9 @@ namespace GamerGallery
 {
     public class Startup
     {
-        public void Configuration(IAppBuilder app)
-        {
-            // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=316888
-        }
+        private readonly string _clientId = ConfigurationManager.AppSettings["okta:ClientId"];
+        private readonly string _redirectUri = ConfigurationManager.AppSettings["okta:RedirectUri"];
+        private readonly string _authority = ConfigurationManager.AppSettings["okta:OrgUri"];
+        private readonly string _clientSecret = ConfigurationManager.AppSettings["okta:ClientSecret"];
     }
 }
