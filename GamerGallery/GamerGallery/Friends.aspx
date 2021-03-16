@@ -26,16 +26,16 @@
         <asp:TextBox ID="friendSearchBox" runat="server"></asp:TextBox>
         <asp:Button ID="searchButton" runat="server" Text="Search" />
         <p>
-            <img alt="icon" class="auto-style1" src="file:///C:/Users/zacha/Dropbox/College/Year%204%20(2020-2021)/Semester%202/Computer%20Science%20483/CAPSTONE%20PROJECT/GamersGallery/Additional%20Files/friends%20icon.png" /><asp:Label ID="Label1" runat="server" Text="Ignilious - 24 shared games"></asp:Label>
+            <img class="auto-style1" src="Images/friends%20icon.png" /><asp:Label ID="Label1" runat="server" Text="Ignilious - 24 shared games"></asp:Label>
         </p>
         <p>
-            <img alt="icon" class="auto-style1" src="file:///C:/Users/zacha/Dropbox/College/Year%204%20(2020-2021)/Semester%202/Computer%20Science%20483/CAPSTONE%20PROJECT/GamersGallery/Additional%20Files/friends%20icon.png" /><asp:Label ID="Label2" runat="server" Text="PBHotdog - 18 shared games"></asp:Label>
+            <img class="auto-style1" src="Images/friends%20icon.png" /><asp:Label ID="Label2" runat="server" Text="PBHotdog - 18 shared games"></asp:Label>
         </p>
         <p>
-            <img alt="icon" class="auto-style1" src="file:///C:/Users/zacha/Dropbox/College/Year%204%20(2020-2021)/Semester%202/Computer%20Science%20483/CAPSTONE%20PROJECT/GamersGallery/Additional%20Files/friends%20icon.png" /><asp:Label ID="Label3" runat="server" Text="McFlargon - 6 shared games"></asp:Label>
+            <img class="auto-style1" src="Images/friends%20icon.png" /><asp:Label ID="Label3" runat="server" Text="McFlargon - 6 shared games"></asp:Label>
         </p>
         <p>
-            <img alt="icon" class="auto-style1" src="file:///C:/Users/zacha/Dropbox/College/Year%204%20(2020-2021)/Semester%202/Computer%20Science%20483/CAPSTONE%20PROJECT/GamersGallery/Additional%20Files/friends%20icon.png" /><asp:Label ID="Label4" runat="server" Text="Zachary_Peculier - 7 shared games"></asp:Label>
+            <img class="auto-style1" src="Images/friends%20icon.png" /><asp:Label ID="Label4" runat="server" Text="Zachary_Peculier - 7 shared games"></asp:Label>
         </p>
     </form>
 </body>
