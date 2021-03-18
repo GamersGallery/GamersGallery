@@ -16,7 +16,7 @@
         }
         .auto-style1 {
             width: 62px;
-            height: 79px;
+            height: 79px;*
         }
     </style>
     <form id="form1" runat="server">
