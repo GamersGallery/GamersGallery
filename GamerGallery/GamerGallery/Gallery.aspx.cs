@@ -13,5 +13,16 @@ namespace GamerGallery
         {
 
         }
+        /*  JSON CODE DO NOT DELETE OR I WILL BITE YOU
+         string url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?&include_appinfo&key=415D9AE08A76A31839DC375BFB2E1975&steamid=76561198071247386&include_appinfo=true";
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            string jsonValue = "";
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)  
+            {
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                jsonValue = reader.ReadToEnd();
+            }
+            dataOutput.Text = jsonValue;
+         */
     }
 }
