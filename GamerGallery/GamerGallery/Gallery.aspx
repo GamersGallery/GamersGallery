@@ -39,4 +39,13 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    <br />
+    <br />
+    <br />
+    <!--this button/textbox is purely for testing purposes, will be removed once Okta implementation is complete--->
+    <asp:TextBox ID="testTextbox" runat="server"></asp:TextBox>
+    <asp:Button ID="testButton" runat="server" OnClick="testButtonClickEvent" Text="test json to table conversion" />
+    <asp:GridView ID="galleryGrid" runat="server">
+    </asp:GridView>
+
 </asp:Content>
