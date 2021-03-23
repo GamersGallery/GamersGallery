@@ -15,31 +15,40 @@ namespace GamerGallery
     {
 
         /// <summary>
-        /// form1 control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// ggLoginImage control.
+        /// Label_Username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ggLoginImage;
+        protected global::System.Web.UI.WebControls.Label Label_Username;
 
         /// <summary>
-        /// usernameText control.
+        /// Username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernameText;
+        protected global::System.Web.UI.WebControls.TextBox Username;
+
+        /// <summary>
+        /// Label_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Password;
 
         /// <summary>
         /// Password control.
@@ -51,21 +60,21 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
-        /// usernameLabel control.
+        /// Loginbutton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label usernameLabel;
+        protected global::System.Web.UI.WebControls.Button Loginbutton;
 
         /// <summary>
-        /// passwordLabel control.
+        /// openIDLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordLabel;
+        protected global::System.Web.UI.WebControls.Button openIDLogin;
     }
 }

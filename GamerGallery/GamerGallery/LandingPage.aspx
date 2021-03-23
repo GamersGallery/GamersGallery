@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-        body {background-color:#271850;}
+        body {background-color:#502db0;}
         .row {background-color:darkgrey;}
         .col-md-4 {background-color:mediumpurple;}
         .lead, h1 {color:black;
