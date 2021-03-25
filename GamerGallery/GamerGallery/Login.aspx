@@ -37,7 +37,7 @@
     <asp:TextBox ID="Password" runat="server" ToolTip="Please enter your Password"></asp:TextBox>
 
     <br />
-    <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" />
+    <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" />
     <asp:Button ID="openIDLogin" runat="server" Text="Login with google" Width="130px" />
 
     <br />

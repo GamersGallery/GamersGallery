@@ -55,7 +55,7 @@
                     </ul>
                    
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Login" onserverclick="btnLogin_Click">Login</a></li>
+                        <li><a runat="server" href="~/Login">Login</a></li>
                     </ul>
             </div>
         </div>
