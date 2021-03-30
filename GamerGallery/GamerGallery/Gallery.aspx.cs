@@ -19,7 +19,6 @@ namespace GamerGallery
             {
                 
             }
-
         }
         protected void Fill_Gallery(long steamID)
         {
@@ -31,6 +30,24 @@ namespace GamerGallery
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 jsonString = reader.ReadToEnd();
             }
+            string s = string.Empty;
+            int gamesNum = 0;
+            for (int i = 0; i < 30; i++)
+            {
+                if (Char.IsDigit(jsonString[i]))
+                {
+                    s += jsonString[i];
+                }
+            }
+
+            if (s.Length > 0)
+            {
+                gamesNum = int.Parse(s);
+            }
+
+            testTextbox.Text = "You own " + gamesNum.ToString() + " games on Steam";
+
+
             DataTable gallery = jsonConversion(jsonString);
             galleryGrid.DataSource = gallery;
             galleryGrid.DataBind();
