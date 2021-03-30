@@ -185,6 +185,7 @@
     <Content Include="Account.aspx" />
     <Content Include="Catalog.aspx" />
     <Content Include="Friends.aspx" />
+    <Content Include="Images\Backgrounds\BackgroundV1.png" />
     <Content Include="Images\logo_images\Logo-clear-smaller.png" />
     <Content Include="Images\logo_images\Logo-clear.png" />
     <Content Include="Images\logo_images\Logo-dark.jpg" />
