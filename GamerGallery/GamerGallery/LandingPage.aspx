@@ -17,7 +17,7 @@
     <div class="jumbotron">
         <h1>Welcome to Gamer Gallery</h1>
         <p class="lead">Gamery Gallery is a web based library application that can connect gamers togethere that allows for gamers to connect with others that have similar titles in their libraries.</p>
-        <p>Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
+        <p style="color: mediumpurple;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
     </div>
 
     <div class="row">
