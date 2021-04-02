@@ -106,6 +106,9 @@ namespace GamerGallery
                 }
                 s = string.Empty;
             }
+            jsonString = jsonString.Replace("appid", "Game ID");
+            jsonString = jsonString.Replace("name", "Title");
+            jsonString = jsonString.Replace("playtime_forever", "Time played (steam)");
             return jsonString;
         }
         public DataTable jsonConversion(string jsonString)
