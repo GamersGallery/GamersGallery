@@ -42,6 +42,15 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.TextBox Username;
 
         /// <summary>
+        /// validateUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateUsername;
+
+        /// <summary>
         /// Label_Password control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace GamerGallery
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
+
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Loginbutton control.

@@ -26,11 +26,7 @@ namespace GamerGallery
 
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
-            if(!Request.IsAuthenticated)
-            {
-                HttpContext.Current.GetOwinContext().Authentication.Challenge(new AuthenticationProperties { RedirectUri = "/" },
-                OpenIdConnectAuthenticationDefaults.AuthenticationType);
-            }
+            
         }
     }
 }
