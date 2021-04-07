@@ -471,6 +471,7 @@
     <Compile Include="Catalog.aspx.designer.cs">
       <DependentUpon>Catalog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PlatformReader.cs" />
     <Compile Include="Friends.aspx.cs">
       <DependentUpon>Friends.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

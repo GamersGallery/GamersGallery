@@ -31,10 +31,17 @@ namespace GamerGallery
                 jsonString = reader.ReadToEnd();
             }
 
-            jsonString = parseJSON(jsonString);
-            DataTable gallery = jsonConversion(jsonString);
-            galleryGrid.DataSource = gallery;
-            galleryGrid.DataBind();
+            if (jsonString == "{\"response\":{}}") //this means bad things regarding profile i guess
+            {
+                testTextbox.Text = "PROFILE ERROR";
+            }
+            else
+            {
+                jsonString = parseJSON(jsonString);
+                DataTable gallery = jsonConversion(jsonString);
+                galleryGrid.DataSource = gallery;
+                galleryGrid.DataBind();
+            }
         }
         public string parseJSON(string jsonString)
         {
@@ -90,12 +97,13 @@ namespace GamerGallery
                                                 {
                                                     break;
                                                 }
-                                                else if (Char.IsDigit(jsonString[i+j+k+l+m]))
+                                                else if (Char.IsDigit(jsonString[i + j + k + l + m]))
                                                 {
                                                     linuxDigit++;
                                                 }
                                             }
                                             jsonString = jsonString.Remove(i, j + k + l + linuxDigit);
+
                                         }
                                     }
                                 }
@@ -106,9 +114,47 @@ namespace GamerGallery
                 }
                 s = string.Empty;
             }
+            s = string.Empty;
+            for (int i = 0; i < jsonString.Length; i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < 18; j++)
+                {
+                    if (i + j >= jsonString.Length)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        s += jsonString[i + j];
+                        if (s == "\"playtime_2weeks\":")
+                        {
+                            int twoDigit = 0;
+                            s = string.Empty;
+                            for (int k = 1; k < 6; k++)
+                            {
+                                if (i + j + k >= jsonString.Length)
+                                {
+                                    break;
+                                }
+                                else if (Char.IsDigit(jsonString[i + j + k]))
+                                {
+                                    twoDigit++;
+                                }
+                                else if (jsonString[i + j + k] == ',')
+                                {
+                                    jsonString = jsonString.Remove(i, j + twoDigit + 2);
+                                }
+                            }
+                        }
+                    }
+                }
+                s = string.Empty;
+            }
             jsonString = jsonString.Replace("appid", "Game ID");
             jsonString = jsonString.Replace("name", "Title");
-            jsonString = jsonString.Replace("playtime_forever", "Time played (steam)");
+            jsonString = jsonString.Replace("playtime_forever", "Time played (steam) in minutes");
+            jsonString = crossPlatform(jsonString, gameNum);
             return jsonString;
         }
         public DataTable jsonConversion(string jsonString)
@@ -163,7 +209,50 @@ namespace GamerGallery
             }
             return gallery;
         }
-        protected void testButtonClickEvent(object sender, EventArgs e) //this button is purely for testing purposes, code will be moved to page load once Okta implementation is complete
+        public string crossPlatform(string jsonString, int gameNum)
+        {
+            testTextbox.Text = string.Empty;
+            string s = string.Empty;
+            int instance = 0;
+            List<int> positions = new List<int>();
+            for (int i = 0; i < jsonString.Length; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    if (i + j >= jsonString.Length)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        s += jsonString[i + j];
+                        if (s == "\",\"Time played ")
+                        {
+                            positions.Add(i + 1);
+                            instance++;
+                        }
+                    }
+                }
+                s = string.Empty;
+            }
+            for (int i = 0; i < positions.Count; i++)
+            {
+                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+            }
+            using (CsvFileReader reader = new CsvFileReader(Server.MapPath(@"~/App_Data/games.csv")))
+            {
+                CsvRow row = new CsvRow();
+                while (reader.ReadRow(row))
+                {
+                    foreach (string str in row)
+                    {
+                        testTextbox.Text = str;
+                    }
+                }
+            }
+            return jsonString;
+        }
+        protected void testButtonClickEvent(object sender, EventArgs e) //this button is purely for testing purposes, code will be moved to Page_Load once loginimplementation is complete
         {
             long steamID = long.Parse(testTextbox.Text);
             Fill_Gallery(steamID);
