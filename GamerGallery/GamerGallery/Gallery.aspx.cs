@@ -117,7 +117,6 @@ namespace GamerGallery
             s = string.Empty;
             for (int i = 0; i < jsonString.Length; i++)
             {
-                int counter = 0;
                 for (int j = 0; j < 18; j++)
                 {
                     if (i + j >= jsonString.Length)
