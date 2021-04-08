@@ -33,13 +33,13 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.Label Label_Username;
 
         /// <summary>
-        /// Username control.
+        /// textBoxUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Username;
+        protected global::System.Web.UI.WebControls.TextBox textBoxUsername;
 
         /// <summary>
         /// validateUsername control.
@@ -60,13 +60,13 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.Label Label_Password;
 
         /// <summary>
-        /// Password control.
+        /// textBoxPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox textBoxPass;
 
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -87,12 +87,12 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.Button Loginbutton;
 
         /// <summary>
-        /// openIDLogin control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button openIDLogin;
+        protected global::System.Web.UI.WebControls.Label testLabel;
     }
 }
