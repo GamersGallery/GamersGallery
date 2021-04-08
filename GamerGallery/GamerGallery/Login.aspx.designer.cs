@@ -87,7 +87,7 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.Button Loginbutton;
 
         /// <summary>
-        /// Label1 control.
+        /// testLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

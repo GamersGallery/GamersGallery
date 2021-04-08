@@ -29,20 +29,22 @@
     <asp:Label ID="Label_Username" runat="server" ForeColor="White" Text="Username"></asp:Label>
 
     <br />
-    <asp:TextBox ID="Username" runat="server"  ToolTip="Please enter your Username"></asp:TextBox>
+    <asp:TextBox ID="textBoxUsername" runat="server"  ToolTip="Please enter your Username" OnTextChanged="Username_TextChanged1"></asp:TextBox>
 
     <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="Username" runat="server" ErrorMessage="Please Enter A Username" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
     <asp:Label ID="Label_Password" runat="server" ForeColor="White" Text="Password"></asp:Label>
     <br />
-    <asp:TextBox ID="Password" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
+    <asp:TextBox ID="textBoxPass" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
 
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Password" ErrorMessage="Please Enter a Password" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
     <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" />
-    <asp:Button ID="openIDLogin" runat="server" Text="Login with google" Width="130px" />
+    <br />
+    <br />
+    <asp:Label ID="testLabel" runat="server" ForeColor="White" Text="Testlabel"></asp:Label>
 
     <br />
     
