@@ -28,9 +28,7 @@ namespace GamerGallery
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
-            try
-            {
-                Console.WriteLine("Test");
+            try { 
                 string usernameId = textBoxUsername.Text;
                 string usernamePassword = textBoxPass.Text;
                 con.Open();
