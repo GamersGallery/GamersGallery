@@ -31,14 +31,14 @@
     <br />
     <asp:TextBox ID="textBoxUsername" runat="server"  ToolTip="Please enter your Username" OnTextChanged="Username_TextChanged1"></asp:TextBox>
 
-    <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="Username" runat="server" ErrorMessage="Please Enter A Username" ForeColor="White"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="textBoxUsername" runat="server" ErrorMessage="Please Enter A Username" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
     <asp:Label ID="Label_Password" runat="server" ForeColor="White" Text="Password"></asp:Label>
     <br />
     <asp:TextBox ID="textBoxPass" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
 
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Password" ErrorMessage="Please Enter a Password" ForeColor="White"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxPass" ErrorMessage="Please Enter a Password" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
     <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" />

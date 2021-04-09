@@ -30,20 +30,26 @@ namespace GamerGallery
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
             try
             {
+                Console.WriteLine("Test");
                 string usernameId = textBoxUsername.Text;
                 string usernamePassword = textBoxPass.Text;
                 con.Open();
-                string sqlQry = "select * from userLogin where UserId='" + usernameId + "' and Password ='" + usernamePassword + "'";
+                string sqlQry = "select * from userLogin where UserId='" + usernameId + "' and UserPass ='" + usernamePassword + "'";
                 SqlCommand cmd = new SqlCommand(sqlQry, con);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 if (sdr.Read())
                 {
-                    testLabel.Text = "Account info correct, loggin in!";
+                    testLabel.Text = "Account info correct, logging in!";
                 }
+                else
+                {
+                    testLabel.Text = "Incorrect Username/Password please try again!";
+                }
+                con.Close();
             }
-            catch
+            catch (Exception exc)
             {
-
+                Response.Write(exc.Message);
             }
         }
 
