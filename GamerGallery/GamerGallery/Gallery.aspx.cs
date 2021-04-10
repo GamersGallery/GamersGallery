@@ -154,6 +154,7 @@ namespace GamerGallery
             jsonString = jsonString.Replace("name", "Title");
             jsonString = jsonString.Replace("playtime_forever", "Time played (steam) in minutes");
             jsonString = crossPlatform(jsonString, gameNum);
+            //testTextbox.Text = jsonString;
             return jsonString;
         }
         public DataTable jsonConversion(string jsonString)
@@ -210,7 +211,6 @@ namespace GamerGallery
         }
         public string crossPlatform(string jsonString, int gameNum)
         {
-            testTextbox.Text = string.Empty;
             string s = string.Empty;
             int instance = 0;
             List<int> positions = new List<int>();
@@ -234,23 +234,56 @@ namespace GamerGallery
                 }
                 s = string.Empty;
             }
-            for (int i = 0; i < positions.Count; i++)
-            {
-                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
-            }
             using (CsvFileReader reader = new CsvFileReader(Server.MapPath(@"~/App_Data/games.csv")))
             {
-                CsvRow row = new CsvRow();
-                while (reader.ReadRow(row))
+                List<string> Title = new List<string>();
+                List<string> Platforms = new List<string>();
+                while (!reader.EndOfStream)
                 {
-                    foreach (string str in row)
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(',');
+                    Title.Add(values[0]);
+                    Platforms.Add(values[1]);
+                }
+
+                for (int i = 0; i < positions.Count; i++)
+                {
+                    bool donePrinting = false;
+                    for (int j = 0; j < 97; j++)
                     {
-                        testTextbox.Text = str;
+                        if (positions[i] - j < 0 || donePrinting)
+                        {
+                            break;
+                        }
+                        s = s.Insert(0, jsonString[positions[i] + (32 * i) - j].ToString());
+                        for (int k = 0; k < Title.Count; k++)
+                        {
+                            testTextbox.Text = s;
+                            if (s.Contains(Title[k]) && Title[k] != "Title")
+                            {
+                                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"DIF\"");
+                                //jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"" + Platforms[k] + "\"");
+                                donePrinting = true;
+                            }
+                            else if (s.Contains("Time played (steam) in minutes"))
+                            {
+                                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                                donePrinting = true;
+                                break;
+                            }
+                        }
                     }
+                    if (!donePrinting)
+                    {
+                        jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                        donePrinting = true;
+                    }
+                    s = string.Empty;
                 }
             }
             return jsonString;
         }
+
         protected void testButtonClickEvent(object sender, EventArgs e) //this button is purely for testing purposes, code will be moved to Page_Load once loginimplementation is complete
         {
             long steamID = long.Parse(testTextbox.Text);
