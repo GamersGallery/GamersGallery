@@ -27,17 +27,31 @@ namespace GamerGallery
 
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
+            
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
             try { 
                 string usernameId = textBoxUsername.Text;
                 string usernamePassword = textBoxPass.Text;
+                string tempId = "test";
                 con.Open();
                 string sqlQry = "select * from userLogin where UserId='" + usernameId + "' and UserPass ='" + usernamePassword + "'";
                 SqlCommand cmd = new SqlCommand(sqlQry, con);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 if (sdr.Read())
                 {
+                    //Only being done because time crunch, please do not do this in future
                     testLabel.Text = "Account info correct, logging in!";
+                    HttpCookie nameCookie = new HttpCookie("username", usernameId);
+                    nameCookie.Expires = DateTime.Now.AddMonths(1);
+                    Response.Cookies.Add(nameCookie);
+                    HttpCookie passCookie = new HttpCookie("password", usernamePassword);
+                    nameCookie.Expires = DateTime.Now.AddMonths(1);
+                    Response.Cookies.Add(passCookie);
+                    tempId = sdr["SteamID"].ToString();
+                    HttpCookie steamIdCookie = new HttpCookie("SteamID", tempId);
+                    nameCookie.Expires = DateTime.Now.AddMonths(1);
+                    Response.Cookies.Add(steamIdCookie);
+                    Response.Redirect("Account.aspx");
                 }
                 else
                 {
