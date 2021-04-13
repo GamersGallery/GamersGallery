@@ -29,7 +29,7 @@
     <asp:Label ID="Label_Username" runat="server" ForeColor="White" Text="Username"></asp:Label>
 
     <br />
-    <asp:TextBox ID="textBoxUsername" runat="server"  ToolTip="Please enter your Username" OnTextChanged="Username_TextChanged1"></asp:TextBox>
+    <asp:TextBox ID="textBoxUsername" runat="server"  ToolTip="Please enter your Username" OnTextChanged="Username_TextChanged1" CssClass="btn-group-xs"></asp:TextBox>
 
     <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="textBoxUsername" runat="server" ErrorMessage="Please Enter A Username" ForeColor="White"></asp:RequiredFieldValidator>
 

@@ -29,9 +29,13 @@
                 <br />
                Password: 
                 <asp:Label ID="passwordLabel" runat="server"></asp:Label>
-                <br />
+                <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" />
+                Show Password<br />
                SteamID: 
             <asp:Label ID="steamIdLabel" runat="server" Text="If you are seeing this I messed up :("></asp:Label>
+            </p>
+            <p>Proceed to the Gallery -</p>
+            <p>Logout - 
             </p>
         </div>
     </form>
