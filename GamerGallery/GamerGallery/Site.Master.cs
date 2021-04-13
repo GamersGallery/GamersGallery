@@ -17,18 +17,5 @@ namespace GamerGallery
         {
 
         }
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (!Request.IsAuthenticated)
-            {
-                HttpContext.Current.GetOwinContext().Authentication.Challenge(
-                  new AuthenticationProperties { RedirectUri = "/" },
-                  OpenIdConnectAuthenticationDefaults.AuthenticationType);
-            }
-        }
-        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
-        {
-            Context.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-        }
     }
 }
