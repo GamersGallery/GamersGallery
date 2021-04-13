@@ -153,8 +153,8 @@ namespace GamerGallery
             jsonString = jsonString.Replace("appid", "Game ID");
             jsonString = jsonString.Replace("name", "Title");
             jsonString = jsonString.Replace("playtime_forever", "Time played (steam) in minutes");
-            jsonString = crossPlatform(jsonString, gameNum);
-            //testTextbox.Text = jsonString;
+            jsonString = crossPlatform(jsonString);
+            testTextbox.Text = jsonString;
             return jsonString;
         }
         public DataTable jsonConversion(string jsonString)
@@ -209,7 +209,7 @@ namespace GamerGallery
             }
             return gallery;
         }
-        public string crossPlatform(string jsonString, int gameNum)
+        public string crossPlatform(string jsonString)
         {
             string s = string.Empty;
             int instance = 0;
@@ -245,37 +245,37 @@ namespace GamerGallery
                     Title.Add(values[0]);
                     Platforms.Add(values[1]);
                 }
-
+                int offset = 0;
                 for (int i = 0; i < positions.Count; i++)
                 {
                     bool donePrinting = false;
                     for (int j = 0; j < 97; j++)
                     {
-                        if (positions[i] - j < 0 || donePrinting)
+                        if (positions[i] - j < 0 || donePrinting || (positions[i] + (32 * i) - j > jsonString.Length))
                         {
                             break;
                         }
-                        s = s.Insert(0, jsonString[positions[i] + (32 * i) - j].ToString());
+                        s = s.Insert(0, jsonString[positions[i] + offset + (32 * i) - j].ToString());
                         for (int k = 0; k < Title.Count; k++)
                         {
-                            testTextbox.Text = s;
-                            if (s.Contains(Title[k]) && Title[k] != "Title")
+                            if (s.Contains("\"Title\":\"" + Title[k]) && Title[k] != "Title")
                             {
-                                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"DIF\"");
-                                //jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"" + Platforms[k] + "\"");
+                                //jsonString = jsonString.Insert(positions[i] + (offset * i), ",\"Cross-Platform Options\": \"DIF\"");
+                                jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"" + Platforms[k] + "\"");
+                                offset += Platforms[k].Length - 3;
                                 donePrinting = true;
                             }
                             else if (s.Contains("Time played (steam) in minutes"))
                             {
-                                jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                                jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
                                 donePrinting = true;
                                 break;
                             }
                         }
                     }
-                    if (!donePrinting)
+                    if (!donePrinting && positions[i] + (32 * i) < jsonString.Length)
                     {
-                        jsonString = jsonString.Insert(positions[i] + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                        jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
                         donePrinting = true;
                     }
                     s = string.Empty;
