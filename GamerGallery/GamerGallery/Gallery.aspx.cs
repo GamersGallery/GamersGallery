@@ -265,7 +265,7 @@ namespace GamerGallery
                             }
                             else if (s.Contains("Time played (steam) in minutes"))
                             {
-                                jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                                jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"---\"");
                                 donePrinting = true;
                                 break;
                             }
@@ -273,7 +273,7 @@ namespace GamerGallery
                     }
                     if (!donePrinting && positions[i] + (32 * i) < jsonString.Length)
                     {
-                        jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"N/A\"");
+                        jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"---\"");
                         donePrinting = true;
                     }
                     s = string.Empty;
