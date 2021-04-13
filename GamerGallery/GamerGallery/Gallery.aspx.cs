@@ -15,8 +15,10 @@ namespace GamerGallery
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) //code will eventually live here
+            if (!IsPostBack)
             {
+                long steamID = long.Parse(Request.Cookies["SteamID"].Value);
+                Fill_Gallery(steamID);
 
             }
         }
@@ -31,9 +33,9 @@ namespace GamerGallery
                 jsonString = reader.ReadToEnd();
             }
 
-            if (jsonString == "{\"response\":{}}") //this means bad things regarding profile i guess
+            if (jsonString == "{\"response\":{}}") 
             {
-                testTextbox.Text = "PROFILE ERROR";
+                //testTextbox.Text = "PROFILE ERROR";
             }
             else
             {
@@ -58,10 +60,8 @@ namespace GamerGallery
             {
                 gamesNum = int.Parse(s);
             }
-            testTextbox.Text = "You own " + gamesNum.ToString() + " games on Steam"; //test code | will delete after integration is complete
             jsonString = jsonString.Replace("{\"response\":{\"game_count\":" + gamesNum.ToString() + ",\"games\":[", string.Empty);
             s = string.Empty;
-            int gameNum = 0;
             for (int i = 0; i < jsonString.Length; i++)
             {
                 for (int j = 0; j < 16; j++)
@@ -280,12 +280,6 @@ namespace GamerGallery
                 }
             }
             return jsonString;
-        }
-
-        protected void testButtonClickEvent(object sender, EventArgs e) //this button is purely for testing purposes, code will be moved to Page_Load once loginimplementation is complete
-        {
-            long steamID = long.Parse(testTextbox.Text);
-            Fill_Gallery(steamID);
         }
     }
 }

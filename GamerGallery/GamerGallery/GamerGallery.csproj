@@ -398,7 +398,6 @@
     <Content Include="App_Data\userDatabase_log.ldf">
       <DependentUpon>userDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="Catalog.aspx" />
     <Content Include="Friends.aspx" />
     <Content Include="Images\Backgrounds\BackgroundV1.png" />
     <Content Include="Images\logo_images\Logo-clear-smaller.png" />
@@ -469,13 +468,6 @@
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Catalog.aspx.cs">
-      <DependentUpon>Catalog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Catalog.aspx.designer.cs">
-      <DependentUpon>Catalog.aspx</DependentUpon>
-    </Compile>
     <Compile Include="PlatformReader.cs" />
     <Compile Include="Friends.aspx.cs">
       <DependentUpon>Friends.aspx</DependentUpon>
