@@ -154,7 +154,6 @@ namespace GamerGallery
             jsonString = jsonString.Replace("name", "Title");
             jsonString = jsonString.Replace("playtime_forever", "Time played (steam) in minutes");
             jsonString = crossPlatform(jsonString);
-            testTextbox.Text = jsonString;
             return jsonString;
         }
         public DataTable jsonConversion(string jsonString)
@@ -176,7 +175,7 @@ namespace GamerGallery
                             columnName.Add(columnString);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         throw new Exception(string.Format("Error Parsing Column Name : {0}", columnName));
                     }
@@ -200,7 +199,7 @@ namespace GamerGallery
                         string rowString = data.Substring(index + 1).Replace("\"", "");
                         row[rowColumn] = rowString;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         continue;
                     }
@@ -260,7 +259,6 @@ namespace GamerGallery
                         {
                             if (s.Contains("\"Title\":\"" + Title[k]) && Title[k] != "Title")
                             {
-                                //jsonString = jsonString.Insert(positions[i] + (offset * i), ",\"Cross-Platform Options\": \"DIF\"");
                                 jsonString = jsonString.Insert(positions[i] + offset + (32 * i), ",\"Cross-Platform Options\": \"" + Platforms[k] + "\"");
                                 offset += Platforms[k].Length - 3;
                                 donePrinting = true;
