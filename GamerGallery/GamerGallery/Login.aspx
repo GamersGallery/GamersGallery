@@ -44,7 +44,7 @@
     <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" />
     <br />
     <br />
-    <asp:Label ID="testLabel" runat="server" ForeColor="White" Text="Testlabel"></asp:Label>
+    <asp:Label ID="Validator" runat="server" ForeColor="Red"></asp:Label>
 
     <br />
     

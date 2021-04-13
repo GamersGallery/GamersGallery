@@ -40,7 +40,7 @@ namespace GamerGallery
                 if (sdr.Read())
                 {
                     //Only being done because time crunch, please do not do this in future
-                    testLabel.Text = "Account info correct, logging in!";
+                    Validator.Text = "Account info correct, logging in!";
                     HttpCookie nameCookie = new HttpCookie("username", usernameId);
                     nameCookie.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(nameCookie);
@@ -55,7 +55,7 @@ namespace GamerGallery
                 }
                 else
                 {
-                    testLabel.Text = "Incorrect Username/Password please try again!";
+                    Validator.Text = "Incorrect Username/Password please try again!";
                 }
                 con.Close();
             }

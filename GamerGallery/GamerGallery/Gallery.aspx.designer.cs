@@ -9,9 +9,7 @@
 
 namespace GamerGallery
 {
-
-
-    public partial class Contact
+    public partial class Gallery
     {
 
         /// <summary>

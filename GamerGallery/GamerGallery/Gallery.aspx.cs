@@ -11,7 +11,7 @@ using System.Data;
 using System.Text.RegularExpressions;
 namespace GamerGallery
 {
-    public partial class Contact : Page
+    public partial class Gallery : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
