@@ -14,7 +14,8 @@
               margin-left: 40px;
           }
       </style>
-      <asp:Image ID="Image1" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png" Style="margin-left: 0px" Width="608px" ImageAlign="Middle" />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <asp:Image ID="Image1" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png" Style="margin-left: 0px" Width="608px"  />
       <br class="auto-style1" />
       <br class="auto-style1" />
        </p>
@@ -22,13 +23,13 @@
          <div class="auto-style1">
              <br />
 &nbsp;&nbsp;
-             <asp:Button ID="sortByGameID" runat="server" BackColor="#222222" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" Text="Game ID" Width="90px" />
+             <asp:Button ID="sortByGameID" runat="server" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" ForeColor="White" Text="Game ID" Width="90px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <asp:Button ID="sortByGameTitle" runat="server" BackColor="#222222" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" Text="Game Title" Width="90px" />
+             <asp:Button ID="sortByGameTitle" runat="server" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" ForeColor="White" Text="Game Title" Width="90px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <asp:Button ID="sortByCrossplay" runat="server" BackColor="#222222" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" Text="Crossplay" Width="90px" />
+             <asp:Button ID="sortByCrossplay" runat="server" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" ForeColor="White" Text="Crossplay" Width="90px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <asp:Button ID="sortByTimePlayed" runat="server" BackColor="#222222" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" Text="Time Played" Width="90px" />
+             <asp:Button ID="sortByTimePlayed" runat="server" BackColor="#502DB0" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" Text="Time Played" Width="90px" />
             <asp:GridView ID="galleryGrid" runat="server" CssClass="auto-style2" ForeColor="White" HorizontalAlign="Center" Width="1087px" 
                 style="
                background-repeat: no-repeat;

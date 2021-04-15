@@ -41,7 +41,7 @@
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxPass" ErrorMessage="Please Enter a Password" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
-    <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" ForeColor="White" />
+    <asp:Button ID="Loginbutton" runat="server" Text="Login" Width="130px" OnClick="Loginbutton_Click" BackColor="#502DB0" BorderColor="#502DB0" BorderStyle="Outset" ForeColor="White" />
     <br />
     <br />
     <asp:Label ID="Validator" runat="server" ForeColor="Red"></asp:Label>
