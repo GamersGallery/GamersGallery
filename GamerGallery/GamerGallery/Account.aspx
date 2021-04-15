@@ -33,10 +33,10 @@
                SteamID: 
             <asp:Label ID="steamIdLabel" runat="server" Text="Error SteamID not found"></asp:Label>
             </p>
-            <p>Proceed to the Gallery -<asp:Button ID="btnGallery" runat="server" ForeColor="Black" OnClick="btnGallery_Click" Text="Gallery" />
+            <p>Proceed to the Gallery -<asp:Button ID="btnGallery" runat="server" ForeColor="White" OnClick="btnGallery_Click" Text="Gallery" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" />
             </p>
             <p>Logout - 
-                <asp:Button ID="btnLogout" runat="server" ForeColor="Black" OnClick="btnLogout_Click" Text="Logout" />
+                <asp:Button ID="btnLogout" runat="server" ForeColor="White" OnClick="btnLogout_Click" Text="Logout" BackColor="#502DB0" BorderColor="#222222" BorderStyle="Outset" />
             </p>
         </div>
     </form>
