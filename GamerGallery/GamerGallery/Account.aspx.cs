@@ -28,9 +28,17 @@ namespace GamerGallery
             }
         }
 
-        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        protected void btnGallery_Click(object sender, EventArgs e)
         {
+            Response.Redirect("Gallery.aspx");
+        }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Cookies["username"].Expires = DateTime.Now.AddMonths(-7);
+            Response.Cookies["password"].Expires = DateTime.Now.AddMonths(-7);
+            Response.Cookies["SteamID"].Expires = DateTime.Now.AddMonths(-7);
+            Response.Redirect("Login.aspx");
         }
     }
 }

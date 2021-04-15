@@ -14,7 +14,7 @@
         }
 
     </style>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <title>Account Settings</title>
 
@@ -25,17 +25,18 @@
                 Account Settings
             </h1>
             <p>Username: 
-                <asp:Label ID="usernameLabel" runat="server" Text="Username goes here"></asp:Label>
+                <asp:Label ID="usernameLabel" runat="server" Text="Error username not found"></asp:Label>
                 <br />
                Password: 
                 <asp:Label ID="passwordLabel" runat="server"></asp:Label>
-                <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" />
-                Show Password<br />
+                &nbsp;<br />
                SteamID: 
-            <asp:Label ID="steamIdLabel" runat="server" Text="If you are seeing this I messed up :("></asp:Label>
+            <asp:Label ID="steamIdLabel" runat="server" Text="Error SteamID not found"></asp:Label>
             </p>
-            <p>Proceed to the Gallery -</p>
+            <p>Proceed to the Gallery -<asp:Button ID="btnGallery" runat="server" ForeColor="Black" OnClick="btnGallery_Click" Text="Gallery" />
+            </p>
             <p>Logout - 
+                <asp:Button ID="btnLogout" runat="server" ForeColor="Black" OnClick="btnLogout_Click" Text="Logout" />
             </p>
         </div>
     </form>

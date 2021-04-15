@@ -15,6 +15,11 @@ namespace GamerGallery
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Request.Cookies.Count == 0)
+            {
+                Response.Redirect("LandingPage.Aspx");
+            }
+            
             if (!IsPostBack)
             {
                 long steamID = long.Parse(Request.Cookies["SteamID"].Value);
