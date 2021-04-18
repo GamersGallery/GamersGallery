@@ -24,29 +24,48 @@
         <div class="col-md-4">
             <h2>Connect your Library</h2>
             <p>
-                Using OpenID Authentication and the Steam web api, we allow you to connect your library to easily compare with your friends. You also have the ability to add custom games to your Gamer Gallery as well.
+                Using the Steam web api, we allow you to connect your library to easily compare with your friends.
             </p>
             <p>
-                <a class="btn btn-default" href="https://steamcommunity.com/dev">Learn more &raquo;</a>
-            </p>
+                &nbsp;</p>
         </div>
         <div class="col-md-4">
-            <h2>Link with Friends</h2>
+            <h2>More info about Games</h2>
             <p>
-                Using the friends list, you can easily access your friend&#39;s games to compare libraries. No more trying to figure out what games to play. Easily branch across platforms and start playing!</p>
+                Features we have implemented allow you to see your cross platform games. Easily to get info!</p>
             <p>
-                <a class="btn btn-default" href="https://www.wikihow.com/Make-Friends">Learn more &raquo;</a>
-            </p>
+                &nbsp;</p>
         </div>
         <div class="col-md-4">
             <h2>Easy Filtering</h2>
             <p>
-                You can easily filter your library. Want to play a certain type of game? Categorize them all by the same type. Whether it be an RPG or a Sandbox game, the power is in your hands to choose.
-            </p>
+                Filter your games with the click of a button. All in the same place.</p>
             <p>
-                <a class="btn btn-default" href="https://en.wikipedia.org/wiki/List_of_types_of_games">Learn more &raquo;</a>
+                &nbsp;</p>
+        </div>
+        <div class="col-md-4">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Steam_icon_logo.png" Width="200px" style="display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width 50%;"/>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <asp:Image ID="Image2" runat="server" />
+        </div>
+        <div class="col-md-4">
+            <asp:Image ID="Image3" runat="server" />
+        </div>
+    </div>
+    <div>
+        <div class="jumbotron" style="background-color:#080808;">
+            <h2> Ready to get into the action? Register or Login below</h2>
+            <p> 
+                <asp:Button ID="Button1" runat="server" CssClass="btn focus" ForeColor="Black" Text="Register" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" CssClass="alert" ForeColor="Black" Text="Login" OnClick="Button1_Click" />
             </p>
         </div>
+        <br />
     </div>
 
 </asp:Content>

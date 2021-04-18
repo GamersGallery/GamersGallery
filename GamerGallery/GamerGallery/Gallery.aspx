@@ -20,7 +20,7 @@
               width 50%;
           }
       </style>
-      <asp:Image ID="Image1" class="fixcenter" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png"   />
+      <asp:Image ID="Image1" class="fixcenter" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png"/>
       <br class="auto-style1" />
       <br class="auto-style1" />
        </p>
