@@ -15,16 +15,21 @@ namespace GamerGallery
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.Cookies.Count == 0)
+            if (Request.Cookies.Count == 0)
             {
-                Response.Redirect("LandingPage.Aspx");
+                Response.Redirect("Login.Aspx");
             }
-            
+
+            string testURL = HttpContext.Current.Request.Url.LocalPath;
+            if (testURL.EndsWith("Login.aspx"))
+            {
+                Response.Redirect("LandingPage.aspx");
+            }
+
             if (!IsPostBack)
             {
                 long steamID = long.Parse(Request.Cookies["SteamID"].Value);
                 Fill_Gallery(steamID);
-
             }
         }
         protected void Fill_Gallery(long steamID)

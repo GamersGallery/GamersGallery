@@ -5277,7 +5277,8 @@ a.thumbnail.active {
 }
 .media,
 .media-body {
-  overflow: hidden;
+  em-danger,
+buttoi
   zoom: 1;
 }
 .media-body {
@@ -5871,7 +5872,8 @@ button.list-group-item-danger.active:focus {
   display: block;
   height: 0;
   padding: 0;
-  overflow: hidden;
+t: 0;
+  border-co:;
 }
 .embed-responsive .embed-responsive-item,
 .embed-responsive iframe,

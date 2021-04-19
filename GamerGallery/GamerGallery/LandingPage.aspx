@@ -14,10 +14,13 @@
         }
 
     </style>
+    <div>
     <div class="jumbotron">
         <h1>Welcome to Gamer Gallery</h1>
         <p class="lead">Gamery Gallery is a web based library application that can connect gamers togethere that allows for gamers to connect with others that have similar titles in their libraries.</p>
         <p style="color: mediumpurple;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
+        <asp:Button ID="Button1" runat="server" CssClass="btn active" ForeColor="Black" Text="Register" OnClick="Button1_Click" />
+        <asp:Button ID="Button2" runat="server" CssClass="alert" ForeColor="Black" Text="Login" OnClick="Button1_Click" />
     </div>
 
     <div class="row">
@@ -44,28 +47,25 @@
                 &nbsp;</p>
         </div>
         <div class="col-md-4">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Steam_icon_logo.png" Width="200px" style="display: block;
+            <asp:Image ID="steamImage" runat="server" ImageUrl="~/Images/Steam_icon_logo.png" Width="200px" style="display: block;
               margin-left: auto;
-              margin-right: auto;
-              width 50%;"/>
+              margin-right: auto;"/>
             <br />
         </div>
         <div class="col-md-4">
-            <asp:Image ID="Image2" runat="server" />
+            <asp:Image ID="crossPlatImage" runat="server" ImageUrl="~/Images/cross_plat_image.png" Width="344px" style="display: block;
+              margin-left: auto;
+              margin-right: auto;"/>
+            <br />
+            <br />
         </div>
         <div class="col-md-4">
-            <asp:Image ID="Image3" runat="server" />
+           <asp:Image ID="filterImage" runat="server" ImageUrl="~/Images/Steam_icon_logo.png" Width="200px" style="display: block;
+              margin-left: auto;
+              margin-right: auto;"/>
+            <br />
         </div>
     </div>
-    <div>
-        <div class="jumbotron" style="background-color:#080808;">
-            <h2> Ready to get into the action? Register or Login below</h2>
-            <p> 
-                <asp:Button ID="Button1" runat="server" CssClass="btn focus" ForeColor="Black" Text="Register" OnClick="Button1_Click" />
-                <asp:Button ID="Button2" runat="server" CssClass="alert" ForeColor="Black" Text="Login" OnClick="Button1_Click" />
-            </p>
         </div>
-        <br />
-    </div>
 
 </asp:Content>
