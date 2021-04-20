@@ -33,15 +33,6 @@ namespace GamerGallery
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// sortByGameID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sortByGameID;
-
-        /// <summary>
         /// sortByGameTitle control.
         /// </summary>
         /// <remarks>
@@ -58,15 +49,6 @@ namespace GamerGallery
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button sortByCrossplay;
-
-        /// <summary>
-        /// sortByTimePlayed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sortByTimePlayed;
 
         /// <summary>
         /// galleryGrid control.

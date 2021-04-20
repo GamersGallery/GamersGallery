@@ -43,7 +43,7 @@ namespace GamerGallery
                 jsonString = reader.ReadToEnd();
             }
 
-            if (jsonString == "{\"response\":{}}") 
+            if (jsonString == "{\"response\":{}}")
             {
                 //testTextbox.Text = "PROFILE ERROR";
             }
@@ -52,6 +52,7 @@ namespace GamerGallery
                 jsonString = parseJSON(jsonString);
                 DataTable gallery = jsonConversion(jsonString);
                 galleryGrid.DataSource = gallery;
+                Session["gallery"] = gallery;
                 galleryGrid.DataBind();
             }
         }
@@ -290,6 +291,41 @@ namespace GamerGallery
                 }
             }
             return jsonString;
+        }
+        protected void sortByGameID_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        protected void sortByGameTitle_Click(object sender, EventArgs e)
+        {
+            DataTable dt = Session["gallery"] as DataTable;
+            DataView dv = dt.DefaultView;
+            dv.Sort = "Title ASC";
+            DataTable dt2 = dv.ToTable();
+            galleryGrid.DataSource = dt2;
+            galleryGrid.DataBind();
+        }
+
+        protected void sortByCrossplay_Click(object sender, EventArgs e)
+        {
+            DataTable dt = Session["gallery"] as DataTable;
+            DataView dv = dt.DefaultView;
+            dv.Sort = "Cross-Platform Options DESC";
+            DataTable dt2 = dv.ToTable();
+            galleryGrid.DataSource = dt2;
+            galleryGrid.DataBind();
+        }
+
+        protected void sortByTimePlayed_Click(object sender, EventArgs e)
+        {
+            DataTable dt = Session["gallery"] as DataTable;
+            DataView dv = dt.DefaultView;
+            dv.Sort = "Time played(steam) in minutes ASC";
+            DataTable dt2 = dv.ToTable();
+            galleryGrid.DataSource = dt2;
+            galleryGrid.DataBind();
         }
     }
 }
