@@ -14,9 +14,14 @@ namespace GamerGallery
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnLogClick(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+        }
+
+        protected void btnRegClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 }
