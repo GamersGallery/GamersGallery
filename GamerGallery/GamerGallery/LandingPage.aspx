@@ -4,23 +4,30 @@
     <style>
         body {background-color:#502db0;}
         .row {background-color:darkgrey;}
-        .col-md-4 {background-color:mediumpurple;}
+        .col-md-4 {background-color:#502db0;}
         .lead, h1 {color:black;
                    text-align: center;
-        }
+                   color: aliceblue;
+        }      
         h2,p {
             text-align: center;
             color: aliceblue;
+        }
+        .jumbotron{
+            background-color: #313131;
+            text-align: center;
         }
 
     </style>
     <div>
     <div class="jumbotron">
-        <h1>Welcome to Gamer Gallery</h1>
+        <h1 style="color: aliceblue">Welcome to Gamer Gallery</h1>
         <p class="lead">Gamery Gallery is a web based library application that can connect gamers togethere that allows for gamers to connect with others that have similar titles in their libraries.</p>
-        <p style="color: mediumpurple;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
-        <asp:Button ID="Button1" runat="server" CssClass="btn active" ForeColor="Black" Text="Register" OnClick="Button1_Click" />
-        <asp:Button ID="Button2" runat="server" CssClass="alert" ForeColor="Black" Text="Login" OnClick="Button1_Click" />
+        <p style="color: aliceblue;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
+        <asp:Button ID="registerButton" runat="server" CssClass="btn active" ForeColor="White" Text="Register" OnClick="Button1_Click" BackColor="#502DB0" BorderStyle="Inset" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="loginButton" runat="server" CssClass="btn active" ForeColor="White" Text="Login" OnClick="Button1_Click" BackColor="#502DB0" BorderStyle="Inset" />
+
     </div>
 
     <div class="row">

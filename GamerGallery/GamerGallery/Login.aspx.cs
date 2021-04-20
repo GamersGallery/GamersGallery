@@ -65,9 +65,6 @@ namespace GamerGallery
             }
         }
 
-        protected void Username_TextChanged1(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

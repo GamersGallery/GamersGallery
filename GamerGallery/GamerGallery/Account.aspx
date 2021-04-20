@@ -24,7 +24,7 @@
             <h1 style="text-align:center; font-family: Robotica; font-size: xx-large; text-transform: capitalize; color: #FFFFFF;">
                 Account Settings
             </h1>
-            <p>Username: 
+            <p style="text-align:center">Username: 
                 <asp:Label ID="usernameLabel" runat="server" Text="Error username not found"></asp:Label>
                 <br />
                Password: 

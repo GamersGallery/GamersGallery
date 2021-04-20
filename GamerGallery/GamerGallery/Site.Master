@@ -41,7 +41,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
              <style>
                 ul:hover{
-                    background-color: gray;
+                    background-color: #502db0;
                 }
 
             </style>
