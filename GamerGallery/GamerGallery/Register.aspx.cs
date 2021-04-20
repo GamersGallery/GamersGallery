@@ -36,10 +36,9 @@ namespace GamerGallery
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     jsonString = reader.ReadToEnd();
                 }
-
                 if (jsonString == "{\"response\":{}}")
                 {
-                    Validator.Text = "SteamID not found, please try again!";
+                    Validator.Text = "SteamID not found, please try again (is your profile private?)";
                 }
                 else
                 {
@@ -62,7 +61,7 @@ namespace GamerGallery
             }
             catch (Exception exc)
             {
-                Response.Write(exc.Message);
+                Validator.Text = "SteamID not found, please try again (is your profile private?)";
             }
         }
 
