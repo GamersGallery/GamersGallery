@@ -163,7 +163,7 @@ namespace GamerGallery
             }
             jsonString = jsonString.Replace("appid", "Game ID");
             jsonString = jsonString.Replace("name", "Title");
-            jsonString = jsonString.Replace("playtime_forever", "Time played (steam) in minutes");
+            jsonString = jsonString.Replace("playtime_forever", "Time played (in minutes)");
             jsonString = crossPlatform(jsonString);
             return jsonString;
         }
