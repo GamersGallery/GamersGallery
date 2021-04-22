@@ -42,19 +42,11 @@ namespace GamerGallery
                 StreamReader reader = new StreamReader(response.GetResponseStream());
                 jsonString = reader.ReadToEnd();
             }
-
-            if (jsonString == "{\"response\":{}}")
-            {
-                //testTextbox.Text = "PROFILE ERROR";
-            }
-            else
-            {
-                jsonString = parseJSON(jsonString);
-                DataTable gallery = jsonConversion(jsonString);
-                galleryGrid.DataSource = gallery;
-                Session["gallery"] = gallery;
-                galleryGrid.DataBind();
-            }
+            jsonString = parseJSON(jsonString);
+            DataTable gallery = jsonConversion(jsonString);
+            galleryGrid.DataSource = gallery;
+            Session["gallery"] = gallery;
+            galleryGrid.DataBind();
         }
         public string parseJSON(string jsonString)
         {

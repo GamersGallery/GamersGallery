@@ -17,7 +17,7 @@
               display: block;
               margin-left: auto;
               margin-right: auto;
-              width 50%;
+              width: 50%;
           }
       </style>
       <asp:Image ID="Image1" class="fixcenter" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png"/>
