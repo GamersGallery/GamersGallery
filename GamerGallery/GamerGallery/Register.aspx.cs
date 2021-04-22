@@ -38,7 +38,7 @@ namespace GamerGallery
                 }
                 if (jsonString == "{\"response\":{}}")
                 {
-                    Validator.Text = "SteamID not found, please try again (is your profile private?)";
+                    Validator.Text = "Steam account private. Please set your profile to public to use our website.";
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace GamerGallery
             }
             catch (Exception exc)
             {
-                Validator.Text = "SteamID not found, please try again (is your profile private?)";
+                Validator.Text = "SteamID not found, please try again";
             }
         }
 
