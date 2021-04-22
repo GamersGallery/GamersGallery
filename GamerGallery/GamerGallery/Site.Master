@@ -64,6 +64,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/Login">Login</a></li>
                     </ul>
+                     <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Account">Account</a></li>
+                    </ul>
             </div>
         </div>
         <div class="container body-content">
