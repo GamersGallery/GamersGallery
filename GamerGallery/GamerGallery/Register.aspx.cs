@@ -15,53 +15,56 @@ namespace GamerGallery
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnRegister(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
-            try
+            if (pass1.Text != pass2.Text)
             {
-                string usernameId = textBoxRegUsername.Text;
-                string usernamePassword = textBoxRegPass.Text;
-                string steamId = textRegSteamID.Text;
-                string url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?&include_appinfo&key=415D9AE08A76A31839DC375BFB2E1975&steamid=" + steamId + "&include_appinfo=true";
-                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-                string jsonString = "";
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-                {
-                    StreamReader reader = new StreamReader(response.GetResponseStream());
-                    jsonString = reader.ReadToEnd();
-                }
-                if (jsonString == "{\"response\":{}}")
-                {
-                    Validator.Text = "Steam account private. Please set your profile to public to use our website.";
-                }
-                else
-                {
-                    con.Open();
-                    string sqlQry = "INSERT INTO userLogin(UserID, UserPass, SteamID) VALUES ('" + usernameId + "' , '" + usernamePassword + "' , '" + steamId + "')";
-                    SqlCommand cmd = new SqlCommand(sqlQry, con);
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    HttpCookie nameCookie = new HttpCookie("username", usernameId);
-                    nameCookie.Expires = DateTime.Now.AddMonths(1);
-                    Response.Cookies.Add(nameCookie);
-                    HttpCookie passCookie = new HttpCookie("password", usernamePassword);
-                    nameCookie.Expires = DateTime.Now.AddMonths(1);
-                    Response.Cookies.Add(passCookie);
-                    HttpCookie steamIdCookie = new HttpCookie("SteamID", steamId);
-                    nameCookie.Expires = DateTime.Now.AddMonths(1);
-                    Response.Cookies.Add(steamIdCookie);
-                    Response.Redirect("Account.aspx");
-                    con.Close();
-                }
+                Validator.Text = "Passwords do not match";
             }
-            catch (Exception exc)
+            else
             {
-                Validator.Text = "SteamID not found, please try again";
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
+                try
+                {
+                    string usernameId = textBoxRegUsername.Text;
+                    string usernamePassword = pass1.Text;
+                    string steamId = textRegSteamID.Text;
+                    string url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?&include_appinfo&key=415D9AE08A76A31839DC375BFB2E1975&steamid=" + steamId + "&include_appinfo=true";
+                    HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                    string jsonString = "";
+                    using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+                    {
+                        StreamReader reader = new StreamReader(response.GetResponseStream());
+                        jsonString = reader.ReadToEnd();
+                    }
+                    if (jsonString == "{\"response\":{}}")
+                    {
+                        Validator.Text = "Steam account private. Please set your profile to public to use our website.";
+                    }
+                    else
+                    {
+                        con.Open();
+                        string sqlQry = "INSERT INTO userLogin(UserID, UserPass, SteamID) VALUES ('" + usernameId + "' , '" + usernamePassword + "' , '" + steamId + "')";
+                        SqlCommand cmd = new SqlCommand(sqlQry, con);
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        HttpCookie nameCookie = new HttpCookie("username", usernameId);
+                        nameCookie.Expires = DateTime.Now.AddMonths(1);
+                        Response.Cookies.Add(nameCookie);
+                        HttpCookie passCookie = new HttpCookie("password", usernamePassword);
+                        nameCookie.Expires = DateTime.Now.AddMonths(1);
+                        Response.Cookies.Add(passCookie);
+                        HttpCookie steamIdCookie = new HttpCookie("SteamID", steamId);
+                        nameCookie.Expires = DateTime.Now.AddMonths(1);
+                        Response.Cookies.Add(steamIdCookie);
+                        Response.Redirect("Account.aspx");
+                        con.Close();
+                    }
+                }
+                catch (Exception exc)
+                {
+                    Validator.Text = "SteamID not found, please try again";
+                }
             }
         }
 

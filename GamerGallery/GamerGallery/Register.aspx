@@ -29,15 +29,21 @@
     <br />
     <asp:TextBox ID="textBoxRegUsername" runat="server"  ToolTip="Please enter your Username" CssClass="btn-group-xs"></asp:TextBox>
 
-    <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="textBoxRegUsername" runat="server" ErrorMessage="Please Enter A Username" ForeColor="White"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="validateUsername" ControlToValidate="textBoxRegUsername" runat="server" ErrorMessage="Please enter a username" ForeColor="White"></asp:RequiredFieldValidator>
 
     <br />
     <asp:Label ID="Label_Password" runat="server" ForeColor="White" Text="Password"></asp:Label>
     <br />
-    <asp:TextBox ID="textBoxRegPass" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
+    <asp:TextBox ID="pass1" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
 
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textBoxRegPass" ErrorMessage="Please Enter a Password" ForeColor="White"></asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="pass1" ErrorMessage="Please enter a password" ForeColor="White"></asp:RequiredFieldValidator>
 
+     <br />
+    <asp:Label ID="Label1" runat="server" ForeColor="White" Text="Confirm Password"></asp:Label>
+    <br />
+    <asp:TextBox ID="pass2" runat="server" ToolTip="Please enter your Password" TextMode="Password"></asp:TextBox>
+
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="pass2" ErrorMessage="Please confirm your password" ForeColor="White"></asp:RequiredFieldValidator>
     <br />
     <asp:Label ID="labelSteamID" runat="server" ForeColor="White" Text="SteamID"></asp:Label>
 
