@@ -550,6 +550,7 @@
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="PasswordSalter.cs" />
     <Compile Include="PlatformReader.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Gallery.aspx.cs">

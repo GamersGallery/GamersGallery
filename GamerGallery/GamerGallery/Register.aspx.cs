@@ -27,8 +27,8 @@ namespace GamerGallery
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
                 try
                 {
-                    string usernameId = textBoxRegUsername.Text;
-                    string usernamePassword = pass1.Text;
+                    string username = textBoxRegUsername.Text;
+                    string password = pass1.Text;
                     string steamId = textRegSteamID.Text;
                     string url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?&include_appinfo&key=415D9AE08A76A31839DC375BFB2E1975&steamid=" + steamId + "&include_appinfo=true";
                     HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
@@ -44,14 +44,15 @@ namespace GamerGallery
                     }
                     else
                     {
+                        string saltedPassword = PasswordSalter.ComputeHash(password, "SHA512", null);
                         con.Open();
-                        string sqlQry = "INSERT INTO userLogin(UserID, UserPass, SteamID) VALUES ('" + usernameId + "' , '" + usernamePassword + "' , '" + steamId + "')";
+                        string sqlQry = "INSERT INTO userLogin(UserID, UserPass, SteamID) VALUES ('" + username + "' , '" + saltedPassword + "' , '" + steamId + "')";
                         SqlCommand cmd = new SqlCommand(sqlQry, con);
                         SqlDataReader sdr = cmd.ExecuteReader();
-                        HttpCookie nameCookie = new HttpCookie("username", usernameId);
+                        HttpCookie nameCookie = new HttpCookie("username", username);
                         nameCookie.Expires = DateTime.Now.AddMonths(1);
                         Response.Cookies.Add(nameCookie);
-                        HttpCookie passCookie = new HttpCookie("password", usernamePassword);
+                        HttpCookie passCookie = new HttpCookie("password", saltedPassword);
                         nameCookie.Expires = DateTime.Now.AddMonths(1);
                         Response.Cookies.Add(passCookie);
                         HttpCookie steamIdCookie = new HttpCookie("SteamID", steamId);

@@ -14,57 +14,51 @@ namespace GamerGallery
 {
     public partial class Login2 : System.Web.UI.Page
     {
-        
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
-
-        protected void Username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
-            
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
-            try { 
-                string usernameId = textBoxUsername.Text;
-                string usernamePassword = textBoxPass.Text;
-                string tempId = "test";
-                con.Open();
-                string sqlQry = "select * from userLogin where UserId='" + usernameId + "' and UserPass ='" + usernamePassword + "'";
-                SqlCommand cmd = new SqlCommand(sqlQry, con);
-                SqlDataReader sdr = cmd.ExecuteReader();
-                if (sdr.Read())
+
+            string username = textBoxUsername.Text;
+            con.Open();
+            string sqlQry = "SELECT * FROM userLogin WHERE UserId='" + username + "'";
+            SqlCommand cmd = new SqlCommand(sqlQry, con);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.Read())
+            {
+                string saltedPassword = sdr["UserPass"].ToString();
+                bool verifyHash = PasswordSalter.VerifyHash(textBoxPass.Text, "SHA512", saltedPassword);
+                if (verifyHash)
                 {
-                    //Only being done because time crunch, please do not do this in future
-                    Validator.Text = "Account info correct, logging in!";
-                    HttpCookie nameCookie = new HttpCookie("username", usernameId);
+                    HttpCookie nameCookie = new HttpCookie("username", username);
                     nameCookie.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(nameCookie);
-                    HttpCookie passCookie = new HttpCookie("password", usernamePassword);
+                    HttpCookie passCookie = new HttpCookie("password", saltedPassword);
                     nameCookie.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(passCookie);
-                    tempId = sdr["SteamID"].ToString();
-                    HttpCookie steamIdCookie = new HttpCookie("SteamID", tempId);
+                    string steamID = sdr["SteamID"].ToString();
+                    HttpCookie steamIdCookie = new HttpCookie("SteamID", steamID);
                     nameCookie.Expires = DateTime.Now.AddMonths(1);
                     Response.Cookies.Add(steamIdCookie);
                     Response.Redirect("Account.aspx");
                 }
                 else
                 {
-                    Validator.Text = "Incorrect Username/Password please try again!";
+                    error();
                 }
-                con.Close();
             }
-            catch (Exception exc)
+            else
             {
-                Response.Write(exc.Message);
+                error();
             }
+            con.Close();
+
         }
 
-     
+        private void error()
+        {
+            Validator.Text = "Incorrect Username/Password please try again!";
+        }
     }
 }

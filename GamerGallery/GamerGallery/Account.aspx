@@ -27,9 +27,6 @@
             <p style="text-align:center">Username: 
                 <asp:Label ID="usernameLabel" runat="server" Text="Error username not found"></asp:Label>
                 <br />
-               Password: 
-                <asp:Label ID="passwordLabel" runat="server"></asp:Label>
-                &nbsp;<br />
                SteamID: 
             <asp:Label ID="steamIdLabel" runat="server" Text="Error SteamID not found"></asp:Label>
             </p>
