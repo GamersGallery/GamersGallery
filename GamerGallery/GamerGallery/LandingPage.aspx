@@ -22,7 +22,7 @@
     <div>
     <div class="jumbotron">
         <h1 style="color: aliceblue">Welcome to Gamer Gallery</h1>
-        <p class="lead">Gamery Gallery is a web based library application that can connect gamers together that allows for gamers to connect with others that have similar titles in their libraries.</p>
+        <p class="lead">Gamery Gallery is a web based library application that allows gamers to connect and see who they can play games with.</p>
         <p style="color: aliceblue;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
         <asp:Button ID="registerButton" runat="server" CssClass="btn active" ForeColor="White" Text="Register" OnClick="btnRegClick" BackColor="#502DB0" BorderStyle="Inset" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
