@@ -284,11 +284,6 @@ namespace GamerGallery
             }
             return jsonString;
         }
-        protected void sortByGameID_Click(object sender, EventArgs e)
-        {
-
-
-        }
 
         protected void sortByGameTitle_Click(object sender, EventArgs e)
         {
