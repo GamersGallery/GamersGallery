@@ -22,7 +22,7 @@
     <div>
     <div class="jumbotron">
         <h1 style="color: aliceblue">Welcome to Gamer Gallery</h1>
-        <p class="lead">Gamery Gallery is a web based library application that can connect gamers together that allows for gamers to connect with others that have similar titles in their libraries.</p>
+        <p class="lead">Gamery Gallery is a web based library application that allows gamers to connect and see who they can play games with.</p>
         <p style="color: aliceblue;">Developed by Sutton Biddle, Zachary Hardin, Collin Sapp, and Ryan Bailey</p>
         <asp:Button ID="registerButton" runat="server" CssClass="btn active" ForeColor="White" Text="Register" OnClick="btnRegClick" BackColor="#502DB0" BorderStyle="Inset" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -34,15 +34,15 @@
         <div class="col-md-4">
             <h2>Connect your Library</h2>
             <p>
-                Using the Steam web api, we allow you to connect your library to easily compare with your friends.
+                Using the Steam Web API, we allow you to connect your library to easily compare with your friends.
             </p>
             <p>
                 &nbsp;</p>
         </div>
         <div class="col-md-4">
-            <h2>More info about Games</h2>
+            <h2>Cross-Platform Capabilities</h2>
             <p>
-                Features we have implemented allow you to see your cross platform games. Easily to get info!</p>
+                Features we have implemented allow you to see your cross-platform games. Easy to get info!</p>
             <p>
                 &nbsp;</p>
         </div>
