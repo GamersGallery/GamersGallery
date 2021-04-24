@@ -16,12 +16,26 @@ namespace GamerGallery
 
         protected void btnLogClick(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            if (Request.Cookies["username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("Account.aspx");
+            }
         }
 
         protected void btnRegClick(object sender, EventArgs e)
         {
-            Response.Redirect("Register.aspx");
+            if (Request.Cookies["username"] == null)
+            {
+                Response.Redirect("Register.aspx");
+            }
+            else
+            {
+                Response.Redirect("Account.aspx");
+            }
         }
     }
 }

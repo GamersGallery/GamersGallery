@@ -40,7 +40,8 @@
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <style>
-                ul:hover {
+                ul:hover 
+                {
                     background-color: #502db0;
                 }
             </style>
@@ -54,9 +55,6 @@
                     <a class="navbar-brand" runat="server" href="~/LandingPage">Gamer Gallery </a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/LandingPage">Home</a></li>
-                    </ul>
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Gallery">Gallery</a></li>
                     </ul>
