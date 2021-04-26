@@ -14,12 +14,9 @@ namespace GamerGallery
 {
     public partial class Login2 : System.Web.UI.Page
     {
-
         protected void Loginbutton_Click(object sender, EventArgs e)
         {
-
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
-
             string username = textBoxUsername.Text;
             con.Open();
             string sqlQry = "SELECT * FROM userLogin WHERE UserId='" + username + "'";
@@ -55,7 +52,6 @@ namespace GamerGallery
             con.Close();
 
         }
-
         private void error()
         {
             Validator.Text = "Incorrect Username/Password please try again!";

@@ -21,8 +21,8 @@ namespace GamerGallery
             }
             else
             {
-                string testURL = HttpContext.Current.Request.Url.LocalPath;
-                if (testURL.EndsWith("Login.aspx"))
+                string urrentURL = HttpContext.Current.Request.Url.LocalPath;
+                if (urrentURL.EndsWith("Login.aspx"))
                 {
                     Response.Redirect("LandingPage.aspx");
                 }
@@ -237,7 +237,7 @@ namespace GamerGallery
                 }
                 s = string.Empty;
             }
-            using (CsvFileReader reader = new CsvFileReader(Server.MapPath(@"~/App_Data/games.csv")))
+            using (StreamReader reader = new StreamReader(Server.MapPath(@"~/App_Data/games.csv")))
             {
                 List<string> Title = new List<string>();
                 List<string> Platforms = new List<string>();
@@ -285,7 +285,6 @@ namespace GamerGallery
             }
             return jsonString;
         }
-
         protected void sortByGameTitle_Click(object sender, EventArgs e)
         {
             DataTable dt = Session["gallery"] as DataTable;
@@ -295,7 +294,6 @@ namespace GamerGallery
             galleryGrid.DataSource = dt2;
             galleryGrid.DataBind();
         }
-
         protected void sortByCrossplay_Click(object sender, EventArgs e)
         {
             DataTable dt = Session["gallery"] as DataTable;
@@ -305,7 +303,6 @@ namespace GamerGallery
             galleryGrid.DataSource = dt2;
             galleryGrid.DataBind();
         }
-
         protected void sortByTimePlayed_Click(object sender, EventArgs e)
         {
             DataTable dt = Session["gallery"] as DataTable;

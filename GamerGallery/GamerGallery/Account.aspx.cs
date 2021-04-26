@@ -18,12 +18,10 @@ namespace GamerGallery
                 steamIdLabel.Text = Request.Cookies["SteamID"].Value;
             }
         }
-
         protected void btnGallery_Click(object sender, EventArgs e)
         {
             Response.Redirect("Gallery.aspx");
         }
-
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Response.Cookies["username"].Expires = DateTime.Now.AddMonths(-7);

@@ -23,7 +23,6 @@ namespace GamerGallery
             }
             else
             {
-
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnection"].ToString());
                 try
                 {
@@ -68,6 +67,5 @@ namespace GamerGallery
                 }
             }
         }
-
     }
 }

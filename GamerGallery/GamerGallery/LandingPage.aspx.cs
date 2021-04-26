@@ -13,7 +13,6 @@ namespace GamerGallery
         {
 
         }
-
         protected void btnLogClick(object sender, EventArgs e)
         {
             if (Request.Cookies["username"] == null)
@@ -25,7 +24,6 @@ namespace GamerGallery
                 Response.Redirect("Account.aspx");
             }
         }
-
         protected void btnRegClick(object sender, EventArgs e)
         {
             if (Request.Cookies["username"] == null)
