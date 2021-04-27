@@ -67,7 +67,7 @@
             <br />
         </div>
         <div class="col-md-4">
-           <asp:Image ID="filterImage" runat="server" ImageUrl="~/Images/Steam_icon_logo.png" Width="200px" style="display: block;
+           <asp:Image ID="filterImage" runat="server" ImageUrl="~/Images/icon_filter.png" Width="200px" style="display: block;
               margin-left: auto;
               margin-right: auto;"/>
             <br />
