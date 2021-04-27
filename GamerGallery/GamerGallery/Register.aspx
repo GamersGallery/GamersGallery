@@ -11,12 +11,15 @@
             text-align: center;
             color: aliceblue;
         }
+        * {
+            font-family: Consolas;
+        }
 
     </style>
-<h1 runat="server" style="text-align:center; font-family: Robotica; font-size: xx-large; text-transform: capitalize; color: #FFFFFF;">
+<h1 runat="server" style="text-align:center;  font-size: xx-large; text-transform: capitalize; color: #FFFFFF;">
     Welcome to the Registration page
 </h1>
-    <h1 runat="server" style="text-align:center; font-family: Robotica; font-size: xx-large; text-transform: capitalize; color: #FFFFFF;">
+    <h1 runat="server" style="text-align:center; font-size: xx-large; text-transform: capitalize; color: #FFFFFF;">
     &nbsp;<asp:Image ID="Image1" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png" style="margin-left: 0px" Width="608px" />
 </h1>
 

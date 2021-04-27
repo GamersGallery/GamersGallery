@@ -19,6 +19,9 @@
               margin-right: auto;
               width: 50%;
           }
+        header {
+            font-family: Consolas;
+        }
       </style>
       <asp:Image ID="Image1" class="fixcenter" runat="server" Height="246px" ImageUrl="~/Images/logo_images/Logo-clear-smaller.png"/>
       <br class="auto-style1" />
@@ -36,7 +39,6 @@
                 style="
                background-repeat: no-repeat;
                background-attachment: fixed;
-               /*font-family: 'Lucida Fax'; */
                font-family: Consolas;
                " CellPadding="5" CellSpacing="10">
                 <AlternatingRowStyle Font-Bold="False" BackColor="#313131" />

@@ -14,6 +14,9 @@
             color: aliceblue;
             font-size: 18px;
         }
+        * {
+            font-family: Consolas;
+        }
        
 
     </style>

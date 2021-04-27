@@ -16,6 +16,7 @@
         .jumbotron{
             background-color: #313131;
             text-align: center;
+            font-family: Consolas;
         }
 
     </style>

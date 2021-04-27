@@ -12,6 +12,9 @@
             text-align: center;
             color: aliceblue;
         }
+        * {
+            font-family: Consolas;
+        }
 
     </style>
 <html>
