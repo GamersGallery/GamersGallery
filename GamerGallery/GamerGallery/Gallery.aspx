@@ -3,10 +3,6 @@
    <div runat="server" id="divGalleryGrid">
        <p class="auto-style1">
       <style>
-         @font-face {
-         font-family: Robotica;
-         src: url(fonts/Robotica.ttf);
-         }
          body {
          background-color: #502db0;
          }
