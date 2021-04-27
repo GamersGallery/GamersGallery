@@ -37,10 +37,10 @@
                 style="
                background-repeat: no-repeat;
                background-attachment: fixed;
-               font-family: Robotica;
-               ">
-                <AlternatingRowStyle Font-Bold="False" />
+               " CellPadding="5" CellSpacing="10">
+                <AlternatingRowStyle Font-Bold="False" BackColor="#313131" />
                <EditRowStyle ForeColor="White" />
+                <HeaderStyle BackColor="#502DB0" BorderColor="White" BorderStyle="Inset" />
                <RowStyle BorderColor="White"/>
             </asp:GridView>
             <br />
